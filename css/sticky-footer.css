@@ -1,0 +1,66 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+.footer span {
+	margin-right: 10px;
+}
+
+.span_in{
+width:32px;
+height:32px;
+background: url("/img/linkedin.png") no-repeat;
+display: inline-block;
+}
+.span_in:hover{
+background: url("/img/linkedin_h.png") no-repeat;
+}
+
+.span_git{
+width:32px;
+height:32px;
+background: url("/img/github.png") no-repeat;
+display: inline-block;
+}
+.span_git:hover{
+background: url("/img/github_h.png") no-repeat;
+}
+
+.span_skype{
+width:32px;
+height:32px;
+background: url("/img/skype.png") no-repeat;
+display: inline-block;
+}
+.span_skype:hover{
+background: url("/img/skype_h.png") no-repeat;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+.container .text-muted {
+  margin: 10px 0;
+}
