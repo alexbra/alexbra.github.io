@@ -11,3 +11,12 @@ body {
 footer {
     margin:0;
 }
+
+.container h1{
+	font-size: 30px;
+	font-weight: 300;
+}
+
+.post_second_level_header span.glyphicon{
+	margin-right: 5px;
+}

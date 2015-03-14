@@ -24,31 +24,31 @@ body {
 .span_in{
 width:32px;
 height:32px;
-background: url("/img/linkedin.png") no-repeat;
+background: url("/img/linkedin.png") 0 0 no-repeat;
 display: inline-block;
 }
 .span_in:hover{
-background: url("/img/linkedin_h.png") no-repeat;
+background-position: 0 -32px;
 }
 
 .span_git{
 width:32px;
 height:32px;
-background: url("/img/github.png") no-repeat;
+background: url("/img/github.png") 0 0 no-repeat;
 display: inline-block;
 }
 .span_git:hover{
-background: url("/img/github_h.png") no-repeat;
+background-position: 0 -32px;
 }
 
 .span_skype{
 width:32px;
 height:32px;
-background: url("/img/skype.png") no-repeat;
+background: url("/img/skype.png") 0 0 no-repeat;
 display: inline-block;
 }
 .span_skype:hover{
-background: url("/img/skype_h.png") no-repeat;
+background-position: 0 -32px;
 }
 
 
@@ -58,7 +58,7 @@ background: url("/img/skype_h.png") no-repeat;
 
 .container {
   width: auto;
-  max-width: 680px;
+  max-width: 800px;
   padding: 0 15px;
 }
 .container .text-muted {
