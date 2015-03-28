@@ -58,7 +58,7 @@ background-position: 0 -32px;
 
 .container {
   width: auto;
-  max-width: 800px;
+  max-width: 1000px;
   padding: 0 15px;
 }
 .container .text-muted {

@@ -13,7 +13,8 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ site.baseurl }}css/bootstrap.min.css" rel="stylesheet">
-    <!-- <link href="{{ site.baseurl }}css/blog-home.css" rel="stylesheet"> -->
+   
+	<!-- <link href="{{ site.baseurl }}css/blog-home.css" rel="stylesheet"> -->
     <!-- Custom CSS -->
     <link href="{{ site.baseurl }}css/1-col-portfolio.css" rel="stylesheet">
     <link href="{{ site.baseurl }}css/sticky-footer.css" rel="stylesheet">
@@ -21,9 +22,13 @@
     <!-- jQuery -->
     <script src="{{ site.baseurl }}js/jquery.js"></script>
 	<script src="{{ site.baseurl }}js/d3.min.js"></script>
-	<script src="{{ site.baseurl }}js/d3.fifa.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{{ site.baseurl }}js/bootstrap.min.js"></script>
+	
+	<script src="{{ site.baseurl }}js/queue.v1.min.js"></script>
+	<script src="{{ site.baseurl }}js/topojson.v1.min.js"></script>  
+	<script src="{{ site.baseurl }}js/d3.tip.v0.6.3.js"></script>	
+    <script src="{{ site.baseurl }}js/d3.fifa.js"></script>
+	<!-- Bootstrap Core JavaScript -->
+    <script src="{{ site.baseurl }}js/bootstrap.min.js"></script> 
 	
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,12 +38,11 @@
     <![endif]-->
 <script>
 $(document).ready(function(e) {
-	
-	drawBarChart(800,700,"budget_sum","Country","{{ site.baseurl}}data/fifa_by_country.csv");
-	$("#sort_by").on("change", changeBar)
-	$(".tab").on("click", changeBar)
-	
-	
+//	
+SvgModule.init();
+$(".tab").on("click", SvgModule.selectGraph);
+$("#sort_by").on("change", SvgModule.selectGraph);
+$("#play_button").on("click", SvgModule.playButtonHandler);
 });
 </script>
 
