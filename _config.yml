@@ -1,7 +1,7 @@
 # Site settings
 title: My jorney to Data Science
 email: avbrazhenko@gmail.com
-description: "Write your site description here. It will be used as your sites meta description as well!"
+description: "All about data... Blog about my journey in Data Analysis | Alex Brazhenko"
 baseurl: "/"
 github_username:  alexbra
 permalink: /:year/:month/:day/:title/

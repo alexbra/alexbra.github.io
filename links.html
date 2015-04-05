@@ -1,0 +1,11 @@
+---
+layout: default
+title: Useful links
+---
+<ul>
+{% for link in site.data.links %}
+  <li>
+      {{ link.name }}
+  </li>
+{% endfor %}
+</ul>
