@@ -19,9 +19,7 @@ layout: default
     {% assign tags_content = '' %}
 {% endif %}
 
-<div class="row">
-	<!-- Blog Entries Column -->
-	<div class="col-md-12">
+
 		<h2>{{ page.title }}</h2>
 		<p class="post_second_level_header">
 			<span class="glyphicon glyphicon-calendar"></span>{{ page.date | date_to_string }}
@@ -33,7 +31,5 @@ layout: default
 		<div id="post_content" class="post-content">
 		{{ content }}
 		</div>
-	</div>
-</div>	
 <hr>
 {% include comments.html %}
