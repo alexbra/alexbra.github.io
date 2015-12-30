@@ -6,8 +6,8 @@ category: nanodegree
 tags: 
 - visualization 
 - d3JS
-
 comments:   true
+
 img: fifa.png
 pr_category: Data Visualization
 tools: Javascript, D3.js, jQuery, CSS, CSV, R

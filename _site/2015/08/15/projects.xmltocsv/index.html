@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Parse and import documentation from XML and DOCX files into LMS</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/blog.css" rel="stylesheet">
+    <!-- Custom CSS -->
+	<link href="/css/fifa.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="/js/jquery.js"></script>
+	<script src="/js/d3.min.js"></script>
+	<script src="/js/queue.v1.min.js"></script>
+	<script src="/js/topojson.v1.min.js"></script>  
+	<script src="/js/d3.tip.v0.6.3.js"></script>	
+    <script src="/js/d3.fifa.js"></script>
+	<!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script> 
+	
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<script>
+$(document).ready(function(e) {
+//	
+SvgModule.init();
+$(".tab").on("click", SvgModule.selectGraph);
+$("#sort_by").on("change", SvgModule.selectGraph);
+$("#play_button").on("click", SvgModule.playButtonHandler);
+});
+</script>
+
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Home</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+				<ul class="nav navbar-nav">
+                    <li>
+                        <a href="/portfolio.html">My projects</a>
+                    </li>
+				<!--
+                    <li>
+                        <a href="/links.html">Useful links</a>
+                    </li>
+
+					<li>
+                        <a href="#">Interesting gists</a>
+                    </li>
+				-->
+				</ul>
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- Page Content -->
+    <div class="container">
+
+
+
+    
+    
+        
+            
+        
+            
+        
+            
+        
+        
+    
+
+
+
+		<h2>Parse and import documentation from XML and DOCX files into LMS</h2>
+		<p class="post_second_level_header">
+			<span class="glyphicon glyphicon-calendar"></span>15 Aug 2015
+			<span class="glyphicon glyphicon-comment"></span><a href="https://alexbra.github.io/2015/08/15/projects.xmltocsv/#disqus_thread" data-disqus-identifier="/2015/08/15/projects.xmltocsv/"></a>
+			<span class="glyphicon glyphicon-folder-open"></span>nanodegree
+			<span class="glyphicon glyphicon-tags"></span><i class="fa fa-tag"></i>: 
+		</p>
+		<hr>
+		<div id="post_content" class="post-content">
+		<p>XML to CSV custom parser. 
+Convert document paragraphs and chapters of technical and law documentation into csv table.</p>
+
+<h4 id="code-source-on-github">Code source on GitHub</h4>
+<p><a href="https://github.com/alexbra/xmltocsv">https://github.com/alexbra/xmltocsv</a></p>
+
+<h4 id="applied-technologies">Applied technologies</h4>
+
+<p>Python, ElementTree, BeautifulSoup</p>
+
+<h3 id="description">Description</h3>
+<p>There are dozens of law and technical documents and more than 20,000 QUIZ questions stored in xml, html and docx files.
+The task is parse and convert them into csv files. Further, csv files will be import into learning management system.</p>
+
+<h4 id="xml-files-format">xml files format</h4>
+<p><img src="/img/xml_doc.png" alt="xml files format" /></p>
+
+<h4 id="parser">Parser</h4>
+<p>I used <code>xml.etree.ElementTree</code> Python module to parse xml files and <code>mammoth</code> and <code>BeautifulSoup</code> for docx files. 
+I had a csv file for each document and question file.</p>
+
+<ul>
+  <li><code>parts.csv</code> documents structure</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">book_id book_name</th>
+      <th style="text-align: left">name</th>
+      <th style="text-align: left">code</th>
+      <th style="text-align: left">parent_code</th>
+      <th style="text-align: left">type</th>
+      <th style="text-align: left">url</th>
+      <th style="text-align: left">paragraphs</th>
+      <th style="text-align: left"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">book_332</td>
+      <td style="text-align: left">332. Book</td>
+      <td style="text-align: left">2. Chapter</td>
+      <td style="text-align: left">1298385727632_34</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">folder</td>
+      <td style="text-align: left">../content/12983857.html</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">book_332</td>
+      <td style="text-align: left">332. Book</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">1298385727632_35</td>
+      <td style="text-align: left">1298385727632_34</td>
+      <td style="text-align: left">lesson</td>
+      <td style="text-align: left">../content/12983857.html</td>
+      <td style="text-align: left">1298385727632_36</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li><code>questions.csv</code> testing questions</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">bookcode</th>
+      <th style="text-align: left">partcode</th>
+      <th style="text-align: left">qcode</th>
+      <th style="text-align: left">qname</th>
+      <th style="text-align: left">type</th>
+      <th style="text-align: left">is_correct</th>
+      <th style="text-align: left">answname</th>
+      <th style="text-align: left">bookname</th>
+      <th style="text-align: left">partname</th>
+      <th style="text-align: left">group</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">book_332</td>
+      <td style="text-align: left">1298385727632_35</td>
+      <td style="text-align: left">1298385727632_18_2</td>
+      <td style="text-align: left">Name of question</td>
+      <td style="text-align: left">multiple</td>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left">answ</td>
+      <td style="text-align: left">332.Book</td>
+      <td style="text-align: left">name</td>
+      <td style="text-align: left">coll_2008</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>As a result, I transformed more than 120 documents and 20,000 quiz questions into learning management system. 
+They are ready for learning of 100K+ company workers.</p>
+
+
+		</div>
+<hr>
+<!-- Add Disqus comments. -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * ADD YOUR DISQUS SHORTNAME HERE * * */
+  var disqus_shortname = 'alexbrablog';
+  
+  (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by  <span class="logo-disqus">Disqus</span></a>
+
+
+
+        <hr>
+	
+        <!-- Footer -->
+        <footer>
+			
+            <div class="row">
+                <div class="col-lg-12">
+						<a href="https://www.linkedin.com/profile/view?id=109443060"><span class="span_in"></span></a>
+						<a href="https://github.com/alexbra"><span class="span_git"></span></a>
+						<a href="skype:alex_bra_don?add"><span class="span_skype"></span></a>				
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </footer>
+    </div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'alexbrablog'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function () {
+var s = document.createElement('script'); s.async = true;
+s.type = 'text/javascript';
+s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script> 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-7282037-16', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+

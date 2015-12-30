@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Data Visualization of FIFA Development Projects</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/blog.css" rel="stylesheet">
+    <!-- Custom CSS -->
+	<link href="/css/fifa.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="/js/jquery.js"></script>
+	<script src="/js/d3.min.js"></script>
+	<script src="/js/queue.v1.min.js"></script>
+	<script src="/js/topojson.v1.min.js"></script>  
+	<script src="/js/d3.tip.v0.6.3.js"></script>	
+    <script src="/js/d3.fifa.js"></script>
+	<!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script> 
+	
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<script>
+$(document).ready(function(e) {
+//	
+SvgModule.init();
+$(".tab").on("click", SvgModule.selectGraph);
+$("#sort_by").on("change", SvgModule.selectGraph);
+$("#play_button").on("click", SvgModule.playButtonHandler);
+});
+</script>
+
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Home</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+				<ul class="nav navbar-nav">
+                    <li>
+                        <a href="/portfolio.html">My projects</a>
+                    </li>
+				<!--
+                    <li>
+                        <a href="/links.html">Useful links</a>
+                    </li>
+
+					<li>
+                        <a href="#">Interesting gists</a>
+                    </li>
+				-->
+				</ul>
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- Page Content -->
+    <div class="container">
+
+
+
+    
+    
+        
+            
+        
+            
+                
+            
+        
+            
+        
+        
+            
+            
+        
+    
+        
+            
+                
+            
+        
+            
+        
+            
+        
+        
+            
+            
+        
+    
+
+
+
+		<h2>Data Visualization of FIFA Development Projects</h2>
+		<p class="post_second_level_header">
+			<span class="glyphicon glyphicon-calendar"></span>10 Mar 2015
+			<span class="glyphicon glyphicon-comment"></span><a href="https://alexbra.github.io/2015/03/10/projects.visualization/#disqus_thread" data-disqus-identifier="/2015/03/10/projects.visualization/"></a>
+			<span class="glyphicon glyphicon-folder-open"></span>nanodegree
+			<span class="glyphicon glyphicon-tags"></span><i class="fa fa-tags"></i>: <a href="/blog/tag/visualization/"><span class="label label-info">visualization</span></a>, <a href="/blog/tag/d3JS/"><span class="label label-info">d3JS</span></a>
+		</p>
+		<hr>
+		<div id="post_content" class="post-content">
+		<p>This project is implementing of task from Data Visualization course in Udacity Data Analyst Nanodegree.
+For this project, I’ve created a data visualization from a data set of FIFA developments projects that 
+showcase how this worldwide organisation invest money in football development.</p>
+
+<h4 id="code-source-on-github">Code source on GitHub</h4>
+<p><a href="https://github.com/alexbra/ud-nd-project5">https://github.com/alexbra/ud-nd-project5</a></p>
+
+<h4 id="data-source">Data source</h4>
+<p><a href="http://datahub.io/dataset/fifa-development-projects">http://datahub.io/dataset/fifa-development-projects</a></p>
+
+<p><code>fifa_all_projects.csv</code> file include information about more than 600 FIFA projects. 
+To make my analysis more convenient and deeper I’ve added some new features in this data set.</p>
+
+<h4 id="codebook-of-data">Codebook of data</h4>
+
+<p>https://github.com/alexbra/ud-nd-project5/tree/master/data</p>
+
+<h4 id="applied-technologies">Applied technologies</h4>
+
+<p>d3JS, jQuery, HTML, CSS, CSV</p>
+
+<h3 id="description">Description</h3>
+
+<p> 
+The Goal Programme enables beneficiary member associations to implement projects designed to develop football in their countries. 
+It is an expression of solidarity that gives national associations with few resources at their disposal the tools they need to function and grow.
+</p>
+
+<p>*Information from FIFA official website http://www.fifa.com/aboutfifa/footballdevelopment/projects/goalprogramme/</p>
+<p>
+The Goal Programme supports the following classes of projects:
+</p>
+<ul>
+<li>Headquarters</li>
+<li>Technical centre</li>
+<li>Football pitch</li>
+<li>Football academy (including creation of youth academies)</li>
+<li>IT projects (modernisation of national association computer systems)</li>
+<li>Other</li>
+</ul>
+<p>
+I've divided my visualization on 4 tabs. On the first one you can explore overview of all projects by country.
+On the others stored additional information which may explain some details of investments. 
+</p>
+<p>
+Just press Play FIFA story button on the first tab to figure out most important points about Goal programme.
+</p>
+<div class="tabs">
+	<div class="sel">Choose a graph</div>
+	<div class="tab active" id="country">Budget by<br />country</div>
+	<div class="tab" id="region">Budget by<br />region</div>
+	<div class="tab" id="class">Budget by<br />project class</div>
+	<div class="tab" id="region_class">Budget by<br />region and class</div>
+</div>
+
+<div class="headings">
+<div style="width:200px;float:left;border-right:1px #fff dotted; height:50px;">
+<div id="sort_div">
+SORT BY:<br />
+<select id="sort_by">
+	<option value="TotalBudget" selected="">Total budget</option>
+	<option value="n">Projects number</option>      
+</select>
+</div>
+<div id="play_div">
+<button class="btn btn-default navbar-btn" id="play_button">Play FIFA story</button>
+</div>
+</div><div><h2 id="chart_heading">Budgets of FIFA Development projects by countries</h2></div>
+</div>
+<div id="svgContainer">
+<svg class="chart"></svg>
+</div>
+
+<h3 id="feedback-from-you">Feedback from you</h3>
+
+<p>To complete my task I need to receive some feedbacks. If you could write some lines in comments, I would be thanksfull.</p>
+
+<ul>
+  <li>What do you notice in the visualization?</li>
+  <li>What questions do you have about the data?</li>
+  <li>What relationships do you notice?</li>
+  <li>What do you think is the main takeaway from this visualization?</li>
+  <li>Is there something you don’t understand in the graphic?</li>
+</ul>
+
+
+		</div>
+<hr>
+<!-- Add Disqus comments. -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * ADD YOUR DISQUS SHORTNAME HERE * * */
+  var disqus_shortname = 'alexbrablog';
+  
+  (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by  <span class="logo-disqus">Disqus</span></a>
+
+
+
+        <hr>
+	
+        <!-- Footer -->
+        <footer>
+			
+            <div class="row">
+                <div class="col-lg-12">
+						<a href="https://www.linkedin.com/profile/view?id=109443060"><span class="span_in"></span></a>
+						<a href="https://github.com/alexbra"><span class="span_git"></span></a>
+						<a href="skype:alex_bra_don?add"><span class="span_skype"></span></a>				
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </footer>
+    </div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'alexbrablog'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function () {
+var s = document.createElement('script'); s.async = true;
+s.type = 'text/javascript';
+s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script> 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-7282037-16', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+

@@ -1,0 +1,83 @@
+/*!
+ * Start Bootstrap - 1 Col Portfolio HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+* {
+  border-radius: 0 !important;
+}
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+	margin-bottom: 60px;
+}
+/*
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+
+}
+*/
+.container {
+  width: auto;
+  max-width: 1000px;
+  padding: 0 15px;
+} 
+
+.container .text-muted {
+  margin: 10px 0;
+}
+
+.container h1{
+	font-size: 30px;
+	font-weight: 300;
+}
+
+.post_second_level_header span.glyphicon{
+	margin-right: 5px;
+}
+
+
+.footer span {
+	margin-right: 10px;
+}
+
+.span_in{
+width:32px;
+height:32px;
+background: url("/img/linkedin.png") 0 0 no-repeat;
+display: inline-block;
+}
+.span_in:hover{
+background-position: 0 -32px;
+}
+
+.span_git{
+width:32px;
+height:32px;
+background: url("/img/github.png") 0 0 no-repeat;
+display: inline-block;
+}
+.span_git:hover{
+background-position: 0 -32px;
+}
+
+.span_skype{
+width:32px;
+height:32px;
+background: url("/img/skype.png") 0 0 no-repeat;
+display: inline-block;
+}
+.span_skype:hover{
+background-position: 0 -32px;
+}
