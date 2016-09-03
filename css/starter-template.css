@@ -1,0 +1,88 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 110px;
+}
+
+.starter-template {
+  padding: 10px 15px;
+  text-align: center;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #eee;
+  padding-top: 20px;
+}
+
+.jumbotron{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #EFF2FA;
+}
+
+.post_second_level_header span.glyphicon{
+	margin-right: 5px;
+}
+
+
+.footer span {
+	margin-right: 10px;
+}
+
+.span_in{
+width:32px;
+height:32px;
+background: url("../img/linkedin.png") 0 0 no-repeat;
+display: inline-block;
+}
+.span_in:hover{
+background-position: 0 -32px;
+}
+
+.span_git{
+width:32px;
+height:32px;
+background: url("../img/github.png") 0 0 no-repeat;
+display: inline-block;
+}
+.span_git:hover{
+background-position: 0 -32px;
+}
+
+.span_skype{
+width:32px;
+height:32px;
+background: url("../img/skype.png") 0 0 no-repeat;
+display: inline-block;
+}
+.span_skype:hover{
+background-position: 0 -32px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 950px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 950px;
+  }
+}
+hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
